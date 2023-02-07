@@ -37,6 +37,7 @@ void setup()
 {
   pinMode(Buzzer1, OUTPUT);
   Serial2.begin(9600);
+  Serial.begin(9600);
 }
 
 void loop()
@@ -45,7 +46,7 @@ void loop()
     char recebeSinal;
     recebeSinal = Serial2.read();
 
-    if(recebeSinal == 'm') {
+    if(recebeSinal == 'f') {
       tocaZelda();
     }
   }
