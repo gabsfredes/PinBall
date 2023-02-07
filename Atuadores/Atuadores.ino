@@ -118,6 +118,7 @@ void setup()
 {
   // Inicialização do Serial.
   Serial1.begin(9600);
+  Serial.begin(9600);
 
   // servo motor
   servo.attach(8);
@@ -168,7 +169,7 @@ void loop()
       servo.write(random(180));
     }
     if (recebePonto == 'd') {
-      score += 5;
+      score += 2;
       delay(100);
       servo.write(random(180));
     }
@@ -177,11 +178,14 @@ void loop()
       delay(100);
       servo.write(random(180));
     } 
+    if (recebePonto == 'f') {
+      score += 999;
+    }
   }
 
   // mantem o score atual do jogaror nos displays
   if(score < 999) {
-    int scoreEsquerdo = score / 100;
+  0int scoreEsquerdo = score / 100;
   int scoreCentral = (score % 100) / 10;
   int scoreDireito = score % 10;
 
