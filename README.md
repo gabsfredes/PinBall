@@ -10,7 +10,7 @@ O Projeto **PinBall Game** foi desenvolvido a partir da proposta de projeto fina
 
 ## Documentação
 
-[Relatório Final](https://link-da-documentação)
+[Relatório Final](https://github.com/gabsfredes/PinBall/blob/e4b66faa908884678ff1347a4d8bd66c04dddd33/relat%C3%B3rio%20pinball.pdf)
 
 
 ## Funcionalidades
