@@ -1,4 +1,4 @@
-//#include <Ultrasonic.h>
+#include <Ultrasonic.h>
 
 int opticoUm = 5;
 int opticoDois = 6; 
@@ -12,13 +12,13 @@ int microSwitch1 = 9;
 int microSwitch2 = 10;
 int microSwitch3 = 11;
 
-//int trigger = A0;
-//int echo = A1;
+int trigger = A0;
+int echo = A1;
 
-//long duracao;
-//long cm = 0;
+long duracao;
+long cm = 0;
 
-//Ultrasonic ultrasonic(trigger, echo);
+Ultrasonic ultrasonic(trigger, echo);
 
 void setup() {
   // Inicialização do Serial.
@@ -29,6 +29,7 @@ void setup() {
   //pinMode(echo, INPUT);
   //pinMode(trigger, OUTPUT);
   Serial1.begin(9600);
+  Serial2.begin(9600);
 }
 
 
@@ -49,7 +50,7 @@ void loop() {
   if(digitalRead(microSwitch1) == HIGH || digitalRead(microSwitch2) == HIGH || digitalRead(microSwitch3) == HIGH) {
     Serial1.write('t');
   }
-  /*
+  
    digitalWrite(trigger, LOW); //não envia som
    delayMicroseconds(2);
    digitalWrite(trigger,HIGH); //envia som 
@@ -58,9 +59,12 @@ void loop() {
    duracao = pulseIn(echo,HIGH); // Captura a duração em tempo do retorno do som.
    cm = duracao/58; // Calcula a distância
 
+   Serial.println(cm);
+
     if (cm <= 8) {
-      Serial2.write('m');
+      Serial2.write('f');
+      Serial1.write('r');
     }
-     */
-   delay(10);  
+   
+   delay(100);  
 }
